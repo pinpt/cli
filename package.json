@@ -1,6 +1,6 @@
 {
 	"name": "@pinpt/cli",
-	"version": "0.0.7",
+	"version": "0.0.8",
 	"description": "Pinpoint CLI",
 	"bin": {
 		"pinpt": "bin/cli.mjs"
