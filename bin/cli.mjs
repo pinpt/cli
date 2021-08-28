@@ -16,12 +16,15 @@ const commandSpec = {
 	deploy: { description: 'Deploy the site to Pinpoint' },
 	login: { description: 'Login to Pinpoint' },
 	logout: { description: 'Logout of Pinpoint on this machine' },
-	signup: { description: 'Signup for Pinpoint' },
+	// signup: { description: 'Signup for Pinpoint' },
 };
 
 (async () => {
 	try {
 		const [options, args] = getArgs(optionSpec);
+		if (args.length === 0 || !commandSpec[args[0]]) {
+			options.help = true;
+		}
 		await run({ args, options, optionSpec, commandSpec, meta: import.meta });
 	} catch (ex) {
 		error(ex.message, true);
